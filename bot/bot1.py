@@ -47,7 +47,7 @@ class Gavr:
                 break
             except Exception:
                 sleep(5)
-        # цикл нужен для того чтобы стучаться пытаться нажать кнопку через каждые 5 секунд (нужно в случае, если мы запустили бота раньше,
+        # цикл нужен для того чтобы пытаться нажать кнопку через каждые 5 секунд (нужно в случае, если мы запустили бота раньше,
         # чем началась конференция)
             
         headers_on.click()
@@ -59,8 +59,6 @@ class Gavr:
         choose_text = self.driver.find_element_by_xpath('//*[@id="message-input"]')
         choose_text.send_keys('Здравствуйте')
         
-        sleep(2)
-
         pya.moveTo(choose_text.location['x'] + 446, choose_text.location['y'] + 347)
         pya.click(button='left')
 
@@ -79,5 +77,6 @@ class Gavr:
 bot = Gavr()
 bot.login()
 bot.header_window()
-#bot.spam_attacker()
+#bot.texting_ones()
+bot.spam_attacker()
 
